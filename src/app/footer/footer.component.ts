@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../services/service.service';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private service: ServiceService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      name: [''],
+      phone: [''],
+      email: [''],
+      note: ['']
+    })
+  }
+
+  onSubmit(){
+    this.service.post(this.form.value).subscribe(res=>console.log(res));
   }
 
 }
