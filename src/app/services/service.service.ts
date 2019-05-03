@@ -11,4 +11,20 @@ export class ServiceService {
   post(data){
     return this.http.post('https://dry-peak-93050.herokuapp.com/api/post', data);
   }
+
+  list(){
+    return this.http.get('https://dry-peak-93050.herokuapp.com/api/list');
+  }
+
+  getImg(id){
+    return this.http.get('https://dry-peak-93050.herokuapp.com/api/img/'+id);
+  }
+
+  public uploadImage(image: File){
+    const formData = new FormData();
+
+    formData.append('file', image);
+
+    return this.http.post('https://dry-peak-93050.herokuapp.com/api/img', formData);
+  }
 }

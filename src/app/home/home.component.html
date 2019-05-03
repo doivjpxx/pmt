@@ -179,79 +179,22 @@
   <div class="container mt-4">
     <h1 class="text-center mb-4 p-4 text-secondary" style="background: #4267b2; color:#fff!important">Khách hàng đã tham
       gia</h1>
-    <div class="row">
+    <div class="row" >
 
       <div class="card-columns">
-        <div class="card shadow border-0">
+
+        <div class="card shadow border-0" *ngFor="let customer of customers">
           <img class="card-img-top"
-            src="https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg"
+            [src]="customer.img"
             alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-          </div>
-        </div>
-        <div class="card shadow border-0  p-3">
-          <blockquote class="blockquote mb-0 card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-              <small class="text-muted">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="card shadow border-0">
-          <img class="card-img-top"
-            src="https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">{{customer.name}}</h5>
+            <p class="card-text">{{customer.note}}</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
-        <div class="card shadow border-0 bg-primary text-white text-center p-3">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-            <footer class="blockquote-footer">
-              <small>
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="card shadow border-0 text-center">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card shadow border-0">
-          <img class="card-img"
-            src="https://4.bp.blogspot.com/-InDD3Hm_bhU/XB4_TK3TT7I/AAAAAAAAAJ4/r5tUeCOqq1MTchFh7D7pWdf582A4qYIIwCEwYBhgL/s1600/Businesswoman-working-at-a-computer-1280x720.jpg"
-            alt="Card image">
-        </div>
-        <div class="card shadow border-0 p-3 text-right">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-              <small class="text-muted">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="card shadow border-0">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is another card with title and supporting text below. This card has some
-              additional content to make it slightly taller overall.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
+
+
       </div>
     </div>
   </div>
