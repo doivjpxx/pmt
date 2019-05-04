@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -24,12 +24,17 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</header>
+</header> -->
+
+<div style="text-align: center">
+  <img src="/assets/img/banner.jpg" width="90%" alt="">
+</div>
 
 <br><br>
 
 <div class="hero">
   <div class="fadeInDown animated">
+    <h2 style="color:#fff">Cuộc thi ảnh “Cùng MM chia sẻ câu chuyện mua sắm”</h2>
     <p style="padding: 50px">Cuộc thi ảnh “Cùng MM chia sẻ câu chuyện mua sắm” sẽ tổng kết lại chiến dịch, tạo sự
       thảo luận, chia sẻ, tương tác của người dùng trên mạng xã hội về những câu chuyện xung quanh việc mua sắm thường
       ngày của họ.
@@ -81,10 +86,6 @@
     </div>
   </div>
 </section>
-
-<div style="text-align: center">
-  <img src="/assets/img/banner.jpg" width="90%" alt="">
-</div>
 
 <section class="our-blog p-0 m-0 bg-silver">
   <div class="container work-process  pb-5 pt-5">
@@ -175,6 +176,8 @@
   </div>
 </section>
 
+<app-footer></app-footer>
+
 <section class="main">
   <div class="container mt-4">
     <h1 class="text-center mb-4 p-4 text-secondary" style="background: #4267b2; color:#fff!important">Khách hàng đã tham
@@ -191,6 +194,7 @@
             <h5 class="card-title">{{customer.name}}</h5>
             <p class="card-text">{{customer.note}}</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <fb-like [url]="customer.img"></fb-like>
           </div>
         </div>
 

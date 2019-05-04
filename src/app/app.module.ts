@@ -10,6 +10,7 @@ import { TeamComponent } from './team/team.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ServiceService } from './services/service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwSocialButtonsModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ServiceService } from '../services/service.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
 
@@ -20,10 +20,10 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      name: [''],
-      phone: [''],
-      email: [''],
-      note: ['']
+      name: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      note: ['', Validators.required]
     })
   }
 
