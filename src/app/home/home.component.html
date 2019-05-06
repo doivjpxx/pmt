@@ -26,10 +26,6 @@
   </div>
 </header> -->
 
-<div style="text-align: center">
-  <img src="/assets/img/banner.jpg" width="90%" alt="">
-</div>
-
 <br><br>
 
 <div class="hero">
@@ -87,118 +83,35 @@
   </div>
 </section>
 
-<section class="our-blog p-0 m-0 bg-silver">
-  <div class="container work-process  pb-5 pt-5">
-    <div class="title mb-5 text-center">
-      <h2 style="background:#4267b2; color:#fff!important">Thể lệ cuộc thi</h2>
-      <p class="text-muted mb-5 text-center">Hãy cùng tham gia để rinh về các phần thưởng có giá trị cho gia đình bạn
-      </p>
-    </div>
-    <!-- ============ step 1 =========== -->
-    <div class="row">
-      <div class="col-md-5">
-        <div class="process-box process-left" data-aos="fade-right" data-aos-duration="1000">
-          <div class="row">
-            <div class="col-md-5">
-              <div class="process-step">
-                <p class="m-0 p-0">Bước</p>
-                <h2 class="m-0 p-0">01</h2>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <p><small> Khách hàng đăng ảnh kèm theo nhận xét khi đi mua sắm tại MM
-                  Mega Market và tag
-                  tên 5 bạn bè của mình vào comment</small></p>
-            </div>
-          </div>
-          <div class="process-line-l"></div>
-        </div>
-      </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-5">
-        <div class="process-point-right"></div>
-      </div>
-    </div>
-    <!-- ============ step 2 =========== -->
-    <div class="row">
-
-      <div class="col-md-5">
-        <div class="process-point-left"></div>
-      </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-5">
-        <div class="process-box process-right" data-aos="fade-left" data-aos-duration="1000">
-          <div class="row">
-            <div class="col-md-5">
-              <div class="process-step">
-                <p class="m-0 p-0">Bước</p>
-                <h2 class="m-0 p-0">02</h2>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <p><small>Like Fanpage và Chia sẻ bài viết về trang cá nhân ở chế độ công khai kèm hashtag <span
-                    style="color:blue">#MMMegaMarket
-                    #muasamhiendai</span></small></p>
-            </div>
-          </div>
-          <div class="process-line-r"></div>
-        </div>
-      </div>
-
-    </div>
-    <!-- ============ step 3 =========== -->
-    <div class="row">
-      <div class="col-md-5">
-        <div class="process-box process-left" data-aos="fade-right" data-aos-duration="1000">
-          <div class="row">
-            <div class="col-md-5">
-              <div class="process-step">
-                <p class="m-0 p-0">Bước</p>
-                <h2 class="m-0 p-0">03</h2>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <p><small> Người tham gia sẽ được gửi một mã dự thưởng và sẽ được tham gia quay số hằng tuần để tìm ra
-                  khách hàng may
-                  mắn nhận voucher trúng thưởng</small></p>
-
-            </div>
-          </div>
-          <div class="process-line-l"></div>
-        </div>
-      </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-5">
-        <div class="process-point-right process-last"></div>
-      </div>
-    </div>
-
+<div class="row" style="text-align:center">
+  <div class="col-md-4"></div>
+  <div class="col-md-2">
+    <a class="btn btn-lg btn-danger" routerLink="/minigame">Xem luật chơi</a></div>
+  <div class="col-md-2">
+      <a class="btn btn-lg btn-primary" routerLink="/dang-ky">Đăng ký ngay</a>
   </div>
-</section>
+  <div class="col-md-4"></div>
+</div>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
 
 <section class="main">
   <div class="container mt-4">
     <h1 class="text-center mb-4 p-4 text-secondary" style="background: #4267b2; color:#fff!important">Khách hàng đã tham
       gia</h1>
-    <div class="row" >
+    <div class="row">
 
       <div class="card-columns">
 
         <div class="card shadow border-0" *ngFor="let customer of customers">
-          <img class="card-img-top"
-            [src]="customer.img"
-            alt="Card image cap">
+          <img class="card-img-top" [src]="customer.img" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{customer.name}}</h5>
             <p class="card-text">{{customer.note}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p><small><strong>Mã dự thưởng:</strong> <span style="color:red"> {{customer.voucher}}</span></small></p>
             <fb-like [url]="customer.img"></fb-like>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>

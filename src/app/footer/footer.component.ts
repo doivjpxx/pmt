@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ServiceService } from '../services/service.service';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class FooterComponent implements OnInit {
 
   selectedFile: File = null;
 
-  constructor(private service: ServiceService, private fb: FormBuilder) { }
+  constructor(private service: ServiceService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -44,7 +45,7 @@ export class FooterComponent implements OnInit {
       this.service.post(this.form.value).subscribe(res=>{
         alert('Thành công!');
         console.log(res);
-        window.location.reload();
+        this.router.navigate(["/home"])
       });
     }, 2000);
     // setTimeout(()=>{

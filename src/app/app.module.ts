@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ServiceService } from './services/service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import { MinigameComponent } from './minigame/minigame.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
     NavBarComponent,
     FooterComponent,
     HomeComponent,
-    TeamComponent
+    TeamComponent,
+    MinigameComponent
   ],
   imports: [
     BrowserModule,
