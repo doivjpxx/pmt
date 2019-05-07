@@ -54,7 +54,8 @@
           #imageInput style="display:none;" />
         <button (click)="onBrowser($event)">Chọn ảnh</button>
         <button (click)="onRemove()">Xóa</button><br><br>
-        <img id="avatar" [src]="url || 'http://placehold.it/200'" alt="your image" (click)="onBrowser($event)" />
+        <img id="avatar" [src]="url || 'http://placehold.it/200'" alt="your image" (click)="onBrowser($event)" *ngIf="!loading" />
+        <img src="/assets/img/loading.gif" width="200" *ngIf="loading">
         <br><br>
   
         <div class="text-center">

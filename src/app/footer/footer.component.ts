@@ -15,6 +15,7 @@ export class FooterComponent implements OnInit {
   form: FormGroup;
   url: any;
 
+  loading: boolean = false;
   selectedFile: File = null;
 
   constructor(
@@ -33,13 +34,17 @@ export class FooterComponent implements OnInit {
   }
 
   onUploadImage(event): void {
+    this.loading = true;
     this.selectedFile = event.target.files[0];
     const reader: FileReader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = () => {
       this.url = reader.result;
     };
-    this.service.uploadImage(this.selectedFile).subscribe(res=>console.log(res));
+    this.service.uploadImage(this.selectedFile).subscribe(res=>{
+      this.loading = false;
+      console.log(res);
+    });
   }
 
   async onSubmit() {
