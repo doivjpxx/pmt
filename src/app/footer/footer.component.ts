@@ -39,12 +39,12 @@ export class FooterComponent implements OnInit {
     reader.onload = () => {
       this.url = reader.result;
     };
+    this.service.uploadImage(this.selectedFile).subscribe(res=>console.log(res));
   }
 
   async onSubmit() {
      forkJoin(
-      await this.service.uploadImage(this.selectedFile),
-      await this.service.post(this.form.value)
+      this.service.post(this.form.value)
     ).subscribe(res => {
       console.log(res);
       alert('Đăng tải thành công!');
