@@ -41,10 +41,10 @@ export class FooterComponent implements OnInit {
     };
   }
 
-  onSubmit() {
-    forkJoin(
-      this.service.uploadImage(this.selectedFile),
-      this.service.post(this.form.value),
+  async onSubmit() {
+     forkJoin(
+      await this.service.uploadImage(this.selectedFile),
+      await this.service.post(this.form.value)
     ).subscribe(res => {
       console.log(res);
       alert('Đăng tải thành công!');
