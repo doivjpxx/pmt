@@ -12,6 +12,7 @@ import { ServiceService } from './services/service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { MinigameComponent } from './minigame/minigame.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MinigameComponent } from './minigame/minigame.component';
     FooterComponent,
     HomeComponent,
     TeamComponent,
-    MinigameComponent
+    MinigameComponent,
+    PromotionsComponent
   ],
   imports: [
     BrowserModule,
